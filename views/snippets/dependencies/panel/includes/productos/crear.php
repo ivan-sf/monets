@@ -458,7 +458,7 @@ if(isset($_GET['inventario'])){
             var datos = $("#formulario").serialize();
             $.ajax({
                 type: "POST",
-                url: "../../peralta/controllers/ajax/ajax_validationProducts.php",
+                url: "../controllers/ajax/ajax_validationProducts.php",
                 data: datos,
                 success: function(data) {
                     if (data.indexOf('1') != -1) {
@@ -484,7 +484,7 @@ if(isset($_GET['inventario'])){
             var datos = $("#formulario").serialize();
             $.ajax({
                 type: "POST",
-                url: "../../peralta/controllers/ajax/ajax_validationProducts.php",
+                url: "../controllers/ajax/ajax_validationProducts.php",
                 data: datos,
                 success: function(data) {
                     if (data.indexOf('1') != -1) {
@@ -510,7 +510,7 @@ if(isset($_GET['inventario'])){
         var datos = $("#formulario").serialize();
         $.ajax({
             type: "POST",
-            url: "../../peralta/controllers/ajax/ajax_validationProducts.php",
+            url: "../controllers/ajax/ajax_validationProducts.php",
             data: datos,
             success: function(data) {
                 if (data.indexOf('1') != -1) {
@@ -537,7 +537,7 @@ if(isset($_GET['inventario'])){
     var datos = $("#formulario").serialize();
     $.ajax({
         type: "POST",
-        url: "../../peralta/controllers/ajax/ajax_validationSeleccionar_inventario.php",
+        url: "../controllers/ajax/ajax_validationSeleccionar_inventario.php",
         data: datos,
         success: function(data) {
             if (data.indexOf('1') != -1) {
