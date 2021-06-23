@@ -365,13 +365,13 @@ if(isset($_GET['inventario'])){
                             <div class="col-lg-6">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
-                                        <b>Ubicacion bodega</b>
+                                        <b>Descripcion</b>
                                     </font>
                                 </font>
 
                                 <br>
                                 <span class="m-form__help">
-                                    <small> <b>Ubicacion en bodega del producto </b></small>
+                                    <small> <b>Descripcion del producto </b></small>
                                 </span>
 
                                 <div class="m-input-icon" id="">
