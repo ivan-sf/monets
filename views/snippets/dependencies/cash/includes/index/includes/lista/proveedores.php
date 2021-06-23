@@ -1,18 +1,17 @@
 <script src="views/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="views/snippets/dependencies/cash/includes/index/includes/lista/peticion.js"></script>
 
 
 <?php 
 if(isset($_GET['cliente'])){
 ?>
-<div id="FormularioCliente">
+<div id="FormularioCliente" style="display:">
 <?php
 
     ?>
     <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
         
-        <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar proveedor">
-        <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar proveedor">
+        <input class="form-control" value="compras" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
+        <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
 
     </form>
 
@@ -20,7 +19,7 @@ if(isset($_GET['cliente'])){
 $cliente = $_GET['cliente'];
 if($cliente != "" && $cliente != 1){
 
-$sql = $con->returnConsulta("SELECT * FROM users 
+$sql = $con->query("SELECT * FROM users 
 INNER JOIN userdetails 
 ON users.idusers=userdetails.users_idusers
 WHERE 
@@ -80,12 +79,12 @@ while($array = mysqli_fetch_array($sql)){ ?>
     }else{
         $iduser = $_SESSION['administrador'];
     }
-    $sql = $con->returnConsulta("SELECT * FROM `bills` WHERE stateBill=2 AND users_idusers=$iduser AND typeBill=1");
+    $sql = $con->query("SELECT * FROM `bills` WHERE stateBill=2 AND users_idusers=$iduser AND typeBill=4");
     $array = mysqli_fetch_array($sql);
     $row = mysqli_num_rows($sql);
     $idFactura = $array['idbills'];
     
-    $sql = $con->returnConsulta("UPDATE `bills` SET `idCliente` = '', `cliente` = 'cuantias menores', `documentUser` = '222222222' WHERE `bills`.`idbills` = $idFactura;");
+    $sql = $con->query("UPDATE `bills` SET `idCliente` = '', `cliente` = 'N/A', `documentUser` = 'N/A' WHERE `bills`.`idbills` = $idFactura;");
     print "<script>window.location='". URL . "cajas?caja=compras';</script>";
 
 }
@@ -98,10 +97,10 @@ while($array = mysqli_fetch_array($sql)){ ?>
 <?php
 
     ?>
-    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=comprsdsfdsfdsfdsas">
+    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
 
-    <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar proveedor">
-    <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar proveedor">
+    <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
+    <input class="form-control" value="compras" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
 
     </form>
 
