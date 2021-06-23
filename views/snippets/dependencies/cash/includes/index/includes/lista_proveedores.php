@@ -1,9 +1,7 @@
 <?php
   $modelInventory = new models\Products();
   $arrayProducts = $modelInventory->array();
-  $modelInventory = new models\Products();
-  
-
+  include "facturacion/php/conection.php";
   $products = $con->returnConsulta("SELECT * FROM products 
     INNER JOIN productdetails 
     ON products.idproducts=productdetails.products_idproducts
