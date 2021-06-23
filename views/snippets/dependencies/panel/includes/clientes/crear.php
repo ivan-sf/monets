@@ -358,7 +358,7 @@ $(document.body).keyup(function(e) {
 			var datos = $("#formulario").serialize();
 			$.ajax({
 				type: "POST",
-				url: "../../irocket/controllers/ajax/ajax_validationClients.php",
+				url: "../../monets/controllers/ajax/ajax_validationClients.php",
 				data: datos,
 				success:function (data) {
 					if(data.indexOf('1') != -1){
@@ -380,7 +380,7 @@ $(document.body).keyup(function(e) {
 		var datos = $("#formulario").serialize();
 		$.ajax({
 			type: "POST",
-			url: "../../irocket/controllers/ajax/ajax_validationClients.php",
+			url: "../../monets/controllers/ajax/ajax_validationClients.php",
 			data: datos,
 			success:function (data) {
 				if(data.indexOf('1') != -1){

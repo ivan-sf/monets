@@ -1,4 +1,4 @@
-<?php
-$con = new models\Conexion();
+<?php namespace models;
 
+$con = new models\Conexion();
 ?>
