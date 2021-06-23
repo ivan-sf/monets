@@ -41,9 +41,9 @@ $arrayBills = $modelBill->array();
                     </li>
 
                     <li>
-                        <a href="index.html" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Clientes <span class="fa arrow"></span> </span></a>
+                        <a href="index.html" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> Terceros <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a target="" href="<?php echo URL; ?>clientes/crear">Crear</a> </li>
+                            <li> <a target="" href="<?php echo URL; ?>tercero/crear">Crear</a> </li>
                            <!-- <li> <a href="<?php #echo URL; ?>cajas?caja=cambios">Cambio</a> </li>
                             <li> <a href="<?php #echo URL; ?>cajas?caja=devoluciones">Devolucion</a> </li> -->
                         </ul>
