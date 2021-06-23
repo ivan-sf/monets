@@ -1,5 +1,4 @@
 <script src="views/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="views/snippets/dependencies/cash/includes/index/includes/lista/peticion.js"></script>
 
 
 <?php 
