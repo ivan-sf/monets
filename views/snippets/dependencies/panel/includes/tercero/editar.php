@@ -636,7 +636,7 @@ function ajaxForm(){
     var datos = $("#formulario").serialize();
     $.ajax({
         type: "POST",
-        url: "../../peralta/controllers/ajax/ajax_validationTerceroUpdate.php",
+        url: "../controllers/ajax/ajax_validationTerceroUpdate.php",
         data: datos,
         success:function (data) {
             if(data==2){
@@ -656,7 +656,7 @@ function ajaxDelete(){
     var datos = $("#formDelete").serialize();
     $.ajax({
         type: "POST",
-        url: "../../peralta/controllers/ajax/ajax_validationTerceroDelete.php",
+        url: "../controllers/ajax/ajax_validationTerceroDelete.php",
         data: datos,
         success:function (data) {
             if(data==2){

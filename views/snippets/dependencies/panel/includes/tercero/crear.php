@@ -919,7 +919,7 @@ $(document.body).keyup(function(e) {
 			var datos = $("#formulario").serialize();
 			$.ajax({
 				type: "POST",
-				url: "../../peralta/controllers/ajax/ajax_validationTercero.php",
+				url: "../controllers/ajax/ajax_validationTercero.php",
 				data: datos,
 				success:function (data) {
 					if(data==2){
@@ -941,7 +941,7 @@ $(document.body).keyup(function(e) {
 		var datos = $("#formulario").serialize();
 		$.ajax({
 			type: "POST",
-			url: "../../peralta/controllers/ajax/ajax_validationTercero.php",
+			url: "../controllers/ajax/ajax_validationTercero.php",
 			data: datos,
 			success:function (data) {
 				if(data==2){
