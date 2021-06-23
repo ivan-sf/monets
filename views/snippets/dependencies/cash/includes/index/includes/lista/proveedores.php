@@ -9,7 +9,7 @@ if(isset($_GET['cliente'])){
 <?php
 
     ?>
-    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=ventas">
+    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
         
         <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
         <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
@@ -24,10 +24,10 @@ $sql = $con->returnConsulta("SELECT * FROM users
 INNER JOIN userdetails 
 ON users.idusers=userdetails.users_idusers
 WHERE 
-users.stateBD = 1 AND userdetails.tipoCliente=1 AND users.userName LIKE  '%$cliente%' OR
-users.stateBD = 1 AND userdetails.tipoCliente=1 AND userdetails.nameUser LIKE  '%$cliente%' OR
-users.stateBD = 1 AND userdetails.tipoCliente=1 AND userdetails.lastnameUser LIKE  '%$cliente%'  OR
-users.stateBD = 1 AND userdetails.tipoCliente=1 AND userdetails.documentUser LIKE  '%$cliente%' 
+users.stateBD = 1 AND userdetails.tipoProveedor=1 AND users.userName LIKE  '%$cliente%' OR
+users.stateBD = 1 AND userdetails.tipoProveedor=1 AND userdetails.nameUser LIKE  '%$cliente%' OR
+users.stateBD = 1 AND userdetails.tipoProveedor=1 AND userdetails.lastnameUser LIKE  '%$cliente%'  OR
+users.stateBD = 1 AND userdetails.tipoProveedor=1 AND userdetails.documentUser LIKE  '%$cliente%' 
 ORDER BY users.idusers desc");
 $row1 = mysqli_num_rows($sql);
 ?>
@@ -86,7 +86,7 @@ while($array = mysqli_fetch_array($sql)){ ?>
     $idFactura = $array['idbills'];
     
     $sql = $con->returnConsulta("UPDATE `bills` SET `idCliente` = '', `cliente` = 'cuantias menores', `documentUser` = '222222222' WHERE `bills`.`idbills` = $idFactura;");
-    print "<script>window.location='". URL . "cajas?caja=ventas';</script>";
+    print "<script>window.location='". URL . "cajas?caja=compras';</script>";
 
 }
 ?>
@@ -98,7 +98,7 @@ while($array = mysqli_fetch_array($sql)){ ?>
 <?php
 
     ?>
-    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=ventas">
+    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
 
     <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
     <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
