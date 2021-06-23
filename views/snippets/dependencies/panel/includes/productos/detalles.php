@@ -965,7 +965,7 @@ $("#botonEditar").click(function() {
 
     $.ajax({
         type: "POST",
-        url: "../../../controllers/ajax/ajax_validationProductsUpdate.php",
+        url: "../../monets/controllers/ajax/ajax_validationProductsUpdate.php",
         data: datos,
         success: function(data) {
             if (data.indexOf('1') != -1) {
@@ -992,7 +992,7 @@ $('#formulario').keyup(function(e) {
 
         $.ajax({
             type: "POST",
-            url: "../../../controllers/ajax/ajax_validationProductsUpdate.php",
+            url: "../../monets/controllers/ajax/ajax_validationProductsUpdate.php",
             data: datos,
             success: function(data) {
                 if (data.indexOf('1') != -1) {
