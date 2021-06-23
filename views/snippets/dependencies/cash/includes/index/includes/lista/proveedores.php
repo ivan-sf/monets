@@ -3,7 +3,7 @@
 
 <?php 
 if(isset($_GET['cliente'])){
-?>
+?>  
 <div id="FormularioCliente">
 <?php
 
