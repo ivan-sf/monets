@@ -375,7 +375,7 @@ if(isset($_GET['inventario'])){
                                 </span>
 
                                 <div class="m-input-icon" id="">
-                                    <input type="text" class="form-control m-input m-input--air m-input--pill" placeholder="Ubicacion bodega" name="ubicacionBodega" id="ubicacionBodega">
+                                    <input type="text" class="form-control m-input m-input--air m-input--pill" placeholder="Descripcion" name="ubicacionBodega" id="ubicacionBodega">
 
                                 </div>
                             </div>
