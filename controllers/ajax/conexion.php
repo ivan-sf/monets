@@ -1,7 +1,7 @@
 <?php 
-define('DB', 'u254469571_titan');
+define('DB', 'u254469571_monets');
 define('HOSTDB', 'mysql.hostinger.co');
-define('USERDB', 'u254469571_titanroot');
+define('USERDB', 'u254469571_monetsroot');
 define('PASSDB', 'Root1234');
 
 $server = HOSTDB;
