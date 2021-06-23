@@ -1,0 +1,87 @@
+                         
+                                                <!-- /.container-fluid -->
+                                                <footer class="footer text-center"> 2018 &copy; ISMA SOLUCIONES TECNOLOGICAS <b></b>  </b> <a target="_blank" href="<?php echo URL_SITIO ?>">IDSF</a></footer>
+                                            </div>
+                                            <!-- /#page-wrapper -->
+                                        </div>
+                                        <!-- /#wrapper -->
+                                        <!-- jQuery -->
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/jqueryui/jquery-ui.js"></script>
+
+
+
+                                        
+                                        <!-- Bootstrap Core JavaScript -->
+                                        <script src="<?php echo (URL); ?>views/snippets/layout/bootstrap/dist/js/tether.min.js"></script>
+                                        <script src="<?php echo (URL); ?>views/snippets/layout/bootstrap/dist/js/bootstrap.min.js"></script>
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+                                        <!-- Menu Plugin JavaScript -->
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+
+
+                                            <script src="<?php echo (URL); ?>views/plugins/bower_components/skycons/skycons.js"></script>
+
+
+
+                                        <script src="<?php echo URL; ?>views/snippets/layout/js/jquery.PrintArea.js" type="text/JavaScript"></script>
+                                            <script>
+                                        $(document).ready(function() {
+                                            $("#print").click(function() {
+                                                var mode = 'iframe'; //popup
+                                                var close = mode == "popup";
+                                                var options = {
+                                                    mode: mode,
+                                                    popClose: close
+                                                };
+                                                $("div.printableArea").printArea(options);
+                                            });
+                                        });
+                                        </script>
+    
+                                        <!--slimscroll JavaScript -->
+                                        <script src="<?php echo (URL); ?>views/snippets/layout/js/jquery.slimscroll.js"></script>
+                                        <!--Wave Effects -->
+                                        <script src="<?php echo (URL); ?>views/snippets/layout/js/waves.js"></script>
+                                        <!--Morris JavaScript -->
+                                       
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/owl.carousel/owl.carousel.min.js"></script>
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/owl.carousel/owl.custom.js"></script>
+
+                                        <!--Counter js -->
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+                                        
+                                        <!-- Custom Theme JavaScript -->
+                                        <script src="<?php echo (URL); ?>views/snippets/layout/js/custom.min.js"></script>
+                                        <!-- Sparkline chart JavaScript -->
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
+                                    <!-- <script src="<?php echo (URL); ?>views/snippets/layout/js/dashboard1.js"></script>
+                                        <!-- Sparkline chart JavaScript -->
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
+                                        <!--Style Switcher -->
+                                        
+                                        <!--Style Switcher -->
+
+
+
+                                        <script src="<?php echo (URL); ?>views/plugins/bower_components/Chart.js/Chart.min.js"></script>
+                                        <?php
+                                        $modelMov2 = new models\Movements();
+                                        $dataTodayActive2 = $modelMov2->todayActive();
+                                        $dataTodayPassive2 = $modelMov2->todayPassive();
+                                        $totalA2 = 0;
+                                        while ( $totalActive2 = mysqli_fetch_array($dataTodayActive2)) {
+                                             $totalA2 += $totalActive2['totalMoney']; 
+                                         } ;
+                                        $totalP2 = 0;
+                                        while ( $totalPassive2 = mysqli_fetch_array($dataTodayPassive2)) {
+                                             $totalP2 += $totalPassive2['totalMoney']; 
+                                         } 
+                                         ?>
+                                         <input type="hidden" id="valor4" value="<?php echo $totalP2; ?>" name="">
+                                         <input type="hidden" id="valor5" value="<?php echo $totalA2; ?>" name="">
+                                         <input type="hidden" id="valor6" value="<?php echo $totalA2-$totalP2; ?>" name="">
+                                 <script src="<?php echo (URL); ?>views/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
