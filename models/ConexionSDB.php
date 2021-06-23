@@ -7,9 +7,9 @@ class ConexionSDB
 
 	private $datos = array(
 		'HOST' => "mysql.hostinger.co", 
-		'USER' => "u254469571_titanroot", 
+		'USER' => "u254469571_monetsroot", 
 		'PASS' => "Root1234", 
-		'DB' => "u254469571_titan"
+		'DB' => "u254469571_monets"
 	);
 	private $con;
 	function __construct(){
