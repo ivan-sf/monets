@@ -1,16 +1,17 @@
 <script src="views/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="views/snippets/dependencies/cash/includes/index/includes/lista/peticion.js"></script>
 
 
 <?php 
 if(isset($_GET['cliente'])){
 ?>
-<div id="FormularioCliente" style="display:">
+<div id="FormularioCliente">
 <?php
 
     ?>
-    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
+    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=ventas">
         
-        <input class="form-control" value="compras" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
+        <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
         <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
 
     </form>
@@ -19,14 +20,14 @@ if(isset($_GET['cliente'])){
 $cliente = $_GET['cliente'];
 if($cliente != "" && $cliente != 1){
 
-$sql = $con->query("SELECT * FROM users 
+$sql = $con->returnConsulta("SELECT * FROM users 
 INNER JOIN userdetails 
 ON users.idusers=userdetails.users_idusers
 WHERE 
-users.stateBD = 1 AND userdetails.tipoProveedor=1 AND users.userName LIKE  '%$cliente%' OR
-users.stateBD = 1 AND userdetails.tipoProveedor=1 AND userdetails.nameUser LIKE  '%$cliente%' OR
-users.stateBD = 1 AND userdetails.tipoProveedor=1 AND userdetails.lastnameUser LIKE  '%$cliente%'  OR
-users.stateBD = 1 AND userdetails.tipoProveedor=1 AND userdetails.documentUser LIKE  '%$cliente%' 
+users.stateBD = 1 AND userdetails.tipoCliente=1 AND users.userName LIKE  '%$cliente%' OR
+users.stateBD = 1 AND userdetails.tipoCliente=1 AND userdetails.nameUser LIKE  '%$cliente%' OR
+users.stateBD = 1 AND userdetails.tipoCliente=1 AND userdetails.lastnameUser LIKE  '%$cliente%'  OR
+users.stateBD = 1 AND userdetails.tipoCliente=1 AND userdetails.documentUser LIKE  '%$cliente%' 
 ORDER BY users.idusers desc");
 $row1 = mysqli_num_rows($sql);
 ?>
@@ -50,7 +51,7 @@ while($array = mysqli_fetch_array($sql)){ ?>
         <td><?php echo $array['lastnameUser'] ?></td>
         <td><?php echo $array['documentUser'] ?></td>
         <td>
-            <form method="POST" action="views/snippets/layout/pages/cajas/php/addtoClienteCompra.php">
+            <form method="POST" action="views/snippets/layout/pages/cajas/php/addtoCliente.php">
             <input type="hidden" name="SESSION" value="<?php 
                 if(isset($_SESSION['adminUserNew'])){
                   echo $_SESSION['adminUserNew'];
@@ -79,13 +80,13 @@ while($array = mysqli_fetch_array($sql)){ ?>
     }else{
         $iduser = $_SESSION['administrador'];
     }
-    $sql = $con->query("SELECT * FROM `bills` WHERE stateBill=2 AND users_idusers=$iduser AND typeBill=4");
+    $sql = $con->returnConsulta("SELECT * FROM `bills` WHERE stateBill=2 AND users_idusers=$iduser AND typeBill=1");
     $array = mysqli_fetch_array($sql);
     $row = mysqli_num_rows($sql);
     $idFactura = $array['idbills'];
     
-    $sql = $con->query("UPDATE `bills` SET `idCliente` = '', `cliente` = 'N/A', `documentUser` = 'N/A' WHERE `bills`.`idbills` = $idFactura;");
-    print "<script>window.location='". URL . "cajas?caja=compras';</script>";
+    $sql = $con->returnConsulta("UPDATE `bills` SET `idCliente` = '', `cliente` = 'cuantias menores', `documentUser` = '222222222' WHERE `bills`.`idbills` = $idFactura;");
+    print "<script>window.location='". URL . "cajas?caja=ventas';</script>";
 
 }
 ?>
@@ -97,10 +98,10 @@ while($array = mysqli_fetch_array($sql)){ ?>
 <?php
 
     ?>
-    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
+    <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=ventas">
 
     <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
-    <input class="form-control" value="compras" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
+    <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
 
     </form>
 

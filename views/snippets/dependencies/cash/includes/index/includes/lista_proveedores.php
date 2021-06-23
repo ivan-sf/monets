@@ -18,7 +18,7 @@
   <?php
   if (isset($_GET['caja'])) {
     if ($_GET['caja'] == 'compras') {
-      
+      include 'lista/proveedores.php';
     } 
   } else {
   } ?>
