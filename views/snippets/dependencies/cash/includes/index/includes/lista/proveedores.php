@@ -11,8 +11,8 @@ if(isset($_GET['cliente'])){
     ?>
     <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
         
-        <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
-        <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
+        <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar proveedor">
+        <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar proveedor">
 
     </form>
 
@@ -100,8 +100,8 @@ while($array = mysqli_fetch_array($sql)){ ?>
     ?>
     <form method="get" style="padding: 12px 20px;" class="" style="display: block;" id="formularioBusquedaProducto" action="cajas?caja=compras">
 
-    <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar cliente">
-    <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar cliente">
+    <input class="form-control" type="text" autofocus name="cliente" id="busquedaCliente" placeholder="Buscar proveedor">
+    <input class="form-control" value="ventas" type="hidden" autofocus name="caja" id="caja" placeholder="Buscar proveedor">
 
     </form>
 
