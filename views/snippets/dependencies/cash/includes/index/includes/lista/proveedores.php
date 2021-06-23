@@ -51,7 +51,7 @@ while($array = mysqli_fetch_array($sql)){ ?>
         <td><?php echo $array['lastnameUser'] ?></td>
         <td><?php echo $array['documentUser'] ?></td>
         <td>
-            <form method="POST" action="views/snippets/layout/pages/cajas/php/addtoCliente.php">
+            <form method="POST" action="views/snippets/layout/pages/cajas/php/addtoClienteCompra.php">
             <input type="hidden" name="SESSION" value="<?php 
                 if(isset($_SESSION['adminUserNew'])){
                   echo $_SESSION['adminUserNew'];
