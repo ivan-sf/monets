@@ -202,7 +202,7 @@ if(isset($_SESSION['adminUser']) OR isset($_SESSION['adminUserNew'])){
 													var datos = $("#formulario").serialize();
 													$.ajax({
 														type: "POST",
-														url: "../../peralta/controllers/ajax/ajax_validationInventory.php",
+														url: "../controllers/ajax/ajax_validationInventory.php",
 														data: datos,
 														success:function (data) {
 															if(data.indexOf('1') != -1){
@@ -223,7 +223,7 @@ if(isset($_SESSION['adminUser']) OR isset($_SESSION['adminUserNew'])){
 												var datos = $("#formulario").serialize();
 												$.ajax({
 													type: "POST",
-													url: "../../peralta/controllers/ajax/ajax_validationInventory.php",
+													url: "../controllers/ajax/ajax_validationInventory.php",
 													data: datos,
 													success:function (data) {
 														if(data.indexOf('1') != -1){
